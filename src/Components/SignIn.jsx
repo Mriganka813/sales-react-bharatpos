@@ -34,7 +34,7 @@ const SignIn = () => {
             const token = response.data.token;
             Cookies.set('token', token, { expires: 7 });
             toast.success("Logged in Successfully")
-            navigate("/");
+            navigate("/user");
         } catch (error) {
             toast.error("Unsuccessful");
         }
