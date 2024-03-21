@@ -1,0 +1,60 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+}
+
+.signIn-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+
+    >h2 {
+        text-align: center;
+    }
+
+}
+
+.signIn-form {
+    margin-top: 20px;
+}
+
+.signIn-form label {
+    display: block;
+    margin: 15px 0 5px;
+
+}
+
+.signIn-form input {
+    width: 100%;
+    padding: 8px;
+    // margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.signIn-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.signIn-form button:hover {
+    background-color: #0056b3;
+}
+
+.password-toggle {
+    width: 100%;
+    text-align: right;
+    margin-block: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
