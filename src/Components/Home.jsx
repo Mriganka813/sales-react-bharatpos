@@ -54,6 +54,11 @@ const Home = () => {
 
     const handleDeleteSales = async (invoiceNumber) => {
 
+        if(!invoiceNumber){
+            toast.warning("Cannot delete this sale");
+            return;
+        }
+
         const confirmed = window.confirm("Are you sure you want to delete this sale?");
         if (!confirmed) {
             return;
