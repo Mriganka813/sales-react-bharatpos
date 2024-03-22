@@ -114,16 +114,6 @@ ul {
     outline: none;
 }
 
-.date {
-    -webkit-user-select: none;
-    /* Disable selection */
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    touch-action: none;
-    /* Disable touch interaction */
-}
-
 .date:focus {
     border-color: #007bff;
 }
@@ -198,7 +188,7 @@ ul {
         padding: 8px 10px;
     }
 
-    tr:last-child {
+    tr:last-child{
         padding: 0;
     }
 
@@ -208,16 +198,28 @@ ul {
         }
     }
 
-    .table-buttons {
+    .table-buttons {    
         >button {
             padding: 8px;
             margin-inline: 8px;
             font-size: 0.7rem;
-
+    
             &:disabled {
                 cursor: not-allowed;
                 background: #0000003e;
             }
         }
     }
+}
+
+.input-group-append{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span.input-group-text{
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }

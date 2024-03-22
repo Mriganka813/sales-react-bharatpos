@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/home.scss';
-import { FaTrash } from "react-icons/fa";
+import { FaCalendarAlt, FaTrash } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +9,8 @@ import { useTable, useSortBy, usePagination } from "react-table";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AiOutlineSortAscending, AiOutlineSortDescending } from "react-icons/ai";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Home = () => {
     const [data, setData] = useState([]);
@@ -178,6 +180,19 @@ const Home = () => {
         navigate("/login")
     }
 
+    function CustomInput({ value, onClick }) {
+        return (
+            <div className="input-group">
+                <input type="text" className='form-control' value={value} onClick={onClick} readOnly />
+                <div className="input-group-append">
+                    <span className="input-group-text">
+                        <FaCalendarAlt />
+                    </span>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className='home-container'>
             <div className="logout">
@@ -190,11 +205,15 @@ const Home = () => {
                 <div className="date-picker-container">
                     <div className="date-picker">
                         <span>Start Date: </span>
-                        <DatePicker dateFormat="dd/MM/yyyy" className="date" selected={startDate} onChange={date => setStartDate(date)} />
+                        <label>
+                            <DatePicker dateFormat="dd/MM/yyyy" className="date" selected={startDate} onChange={date => setStartDate(date)} customInput={<CustomInput />} />
+                        </label>
                     </div>
                     <div className="date-picker">
                         <span>End Date: </span>
-                        <DatePicker dateFormat="dd/MM/yyyy" className="date" selected={endDate} onChange={date => setEndDate(date)} />
+                        <label>
+                            <DatePicker dateFormat="dd/MM/yyyy" className="date" selected={endDate} onChange={date => setEndDate(date)} customInput={<CustomInput />} />
+                        </label>
                     </div>
                 </div>
 
