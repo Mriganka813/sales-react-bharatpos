@@ -32,7 +32,7 @@ const Home = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    `https://testbackend-u2af.onrender.com/api/v1/report?start_date=${startDate.toISOString()}&end_date=${endDate.toISOString()}&type=sale`,
+                    `https://site.bharatpos.xyz/api/v1/report?start_date=${startDate.toISOString()}&end_date=${endDate.toISOString()}&type=sale`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`
@@ -66,7 +66,7 @@ const Home = () => {
 
         try {
             await axios.delete(
-                `https://testbackend-u2af.onrender.com/api/v1/sale/${invoiceNumber}`,
+                `https://site.bharatpos.xyz/api/v1/sale/${invoiceNumber}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
