@@ -32,6 +32,12 @@ const SignIn = () => {
                 email,
                 password,
             });
+
+            if (response.data.token_subuser) {
+                toast.error("Access Denied: User unauthorized");
+                return;
+            }
+
             const token = response.data.token;
             Cookies.set('token', token, { expires: 7 });
             toast.success("Logged in Successfully")

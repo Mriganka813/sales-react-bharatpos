@@ -8,6 +8,7 @@ import AllSales from "./Components/AllSales";
 import AllSubusers from "./Components/AllSubusers";
 import EditSubUser from "./Components/EditSubUser";
 import AddSubUser from "./Components/AddSubUser";
+import DeleteAccount from "./Components/DeleteAccount";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/subusers-all" element={<AllSubusers />} />
           <Route path="/subuser/:id" element={<EditSubUser />} />
           <Route path="/subuser/new" element={<AddSubUser />} />
+          <Route path="/delete/me" element={<DeleteAccount />} />
         </Routes>
       </BrowserRouter>
     </>

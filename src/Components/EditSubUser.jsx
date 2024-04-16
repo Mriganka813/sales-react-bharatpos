@@ -13,6 +13,7 @@ const EditSubUser = () => {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [role, setRole] = useState('');
+    const [password, setPassword] = useState('');
 
     useEffect(() => {
         if (!token) {
@@ -49,14 +50,20 @@ const EditSubUser = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            let requestData = {
+                name,
+                email,
+                phoneNumber,
+                role
+            };
+
+            if (password.trim() !== '') {
+                requestData.password = password;
+            }
+
             await axios.put(
                 `${Server}/api/v1/sub-user/${id}`,
-                {
-                    name,
-                    email,
-                    phoneNumber,
-                    role
-                },
+                requestData,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -64,11 +71,12 @@ const EditSubUser = () => {
                 }
             );
             toast.success("Staff details saved successfully");
-            navigate("/subusers-all")
+            navigate("/subusers-all");
         } catch (error) {
-            toast.error("Something went wrong")
+            toast.error("Something went wrong");
         }
     };
+
 
     return (
         <div className="main-container">
@@ -86,6 +94,9 @@ const EditSubUser = () => {
 
                     <label htmlFor="role">Role</label>
                     <input type="text" id="role" value={role} onChange={(e) => setRole(e.target.value)} />
+
+                    <label htmlFor="password">Password</label>
+                    <input type="text" id="password" className="password-input" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Fill only if you want to change staff's password" />
 
                     <button type="submit" className="submit-btn">Save</button>
                 </form>

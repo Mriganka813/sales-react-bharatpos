@@ -33,6 +33,9 @@ const Home = () => {
                 <Link to='/subusers-all'>
                     Manage Staff
                 </Link>
+                <Link to='/delete/me'>
+                    Delete Account
+                </Link>
             </div>
         </div>
     )

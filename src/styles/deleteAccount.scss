@@ -1,0 +1,47 @@
+.delete-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70dvh;
+}
+
+.delete-account-container {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    margin: 20px auto;
+}
+
+.delete-account-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.delete-account-container form p{
+    text-align: left;
+}
+
+.confirmation-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.delete-button {
+    background-color: #ff4d4f;
+    color: #fff;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #ff7875;
+}
