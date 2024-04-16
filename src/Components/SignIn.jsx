@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import '../styles/signin.scss';
 import Cookies from 'js-cookie';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const SignIn = () => {
@@ -10,6 +10,8 @@ const SignIn = () => {
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
+
+    const Server = import.meta.env.VITE_BASE_URL;
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -26,8 +28,7 @@ const SignIn = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('https://site.bharatpos.xyz/api/v1/login', {   
-            // const response = await axios.post(' http://localhost:8001/api/v1/login', {   
+            const response = await axios.post(`${Server}/api/v1/login`, {
                 email,
                 password,
             });
@@ -70,6 +71,11 @@ const SignIn = () => {
                         </div>
                     </div>
                     <button type="submit">Login</button>
+                    <span className="forget-pass">
+                        <Link to="/forget-password">
+                            Forget Password
+                        </Link>
+                    </span>
                 </form>
             </div>
         </div>

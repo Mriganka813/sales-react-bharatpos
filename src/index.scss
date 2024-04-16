@@ -25,3 +25,14 @@
 a {
     text-decoration: none;
 }
+
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+}
+
+.forget-password-container{
+    margin: 20px;
+}
