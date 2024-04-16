@@ -48,11 +48,11 @@ const AllSubusers = () => {
     const handleDeleteSales = async (subuserId) => {
 
         if (!subuserId) {
-            toast.warning("Cannot delete this sale");
+            toast.warning("Cannot delete this staff");
             return;
         }
 
-        const confirmed = window.confirm("Are you sure you want to delete this sale?");
+        const confirmed = window.confirm("Are you sure you want to delete this staff?");
         if (!confirmed) {
             return;
         }
@@ -66,10 +66,10 @@ const AllSubusers = () => {
                     }
                 }
             );
-            toast.success("Sales deleted successfully");
+            toast.success("Staff deleted successfully");
             setSalesKey(prevKey => prevKey + 1);
         } catch (error) {
-            toast.error('Error deleting sales');
+            toast.error('Error deleting staff');
         }
     };
 
@@ -149,9 +149,9 @@ const AllSubusers = () => {
                     Logout
                 </button>
             </div>
-            <h1>All Sub-users</h1>
+            <h1>All Staff</h1>
             <button onClick={() => (navigate('/subuser/new'))} className='newSubUser-btn'>
-                New sub-user
+                New staff
             </button>
             <div className="container">
 

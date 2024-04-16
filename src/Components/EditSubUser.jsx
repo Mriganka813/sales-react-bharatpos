@@ -63,7 +63,7 @@ const EditSubUser = () => {
                     }
                 }
             );
-            toast.success("Sub user details saved successfully");
+            toast.success("Staff details saved successfully");
             navigate("/subusers-all")
         } catch (error) {
             toast.error("Something went wrong")
@@ -73,7 +73,7 @@ const EditSubUser = () => {
     return (
         <div className="main-container">
             <div className="forget-password-container">
-                <h2>Edit SubUser</h2>
+                <h2>Edit Staff</h2>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="name">Name</label>
                     <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />

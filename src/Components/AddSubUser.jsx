@@ -45,7 +45,7 @@ const AddSubUser = () => {
                     }
                 }
             );
-            toast.success("Sub user added successfully");
+            toast.success("Staff added successfully");
             navigate("/subusers-all");
         } catch (error) {
             console.log(error)
@@ -60,7 +60,7 @@ const AddSubUser = () => {
     return (
         <div className="main-container">
             <div className="forget-password-container">
-                <h2>Add SubUser</h2>
+                <h2>Add Staff</h2>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="name">Name</label>
                     <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />

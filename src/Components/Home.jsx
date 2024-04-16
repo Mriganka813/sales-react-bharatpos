@@ -1,12 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
 import '../styles/home.scss'
-import { FcSalesPerformance } from "react-icons/fc";
-import { FaUsers } from "react-icons/fa";
 import Cookies from "js-cookie";
+import { useEffect } from "react";
 
 const Home = () => {
 
     const navigate = useNavigate();
+    const token = Cookies.get('token');
+
+    useEffect(() => {
+        if (!token) {
+            navigate("/login")
+        }
+    }, [navigate, token]);
 
     const handleLogout = () => {
         Cookies.remove('token');
@@ -22,10 +28,10 @@ const Home = () => {
             </div>
             <div className="link-cont">
                 <Link to='/sales-all'>
-                    <FcSalesPerformance /> Manage Sales
+                    Manage Sales
                 </Link>
                 <Link to='/subusers-all'>
-                    <FaUsers /> Manage Subusers
+                    Manage Staff
                 </Link>
             </div>
         </div>
